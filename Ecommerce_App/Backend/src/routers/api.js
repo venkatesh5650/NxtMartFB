@@ -1,8 +1,14 @@
-const express = require("express");
-const Database = require("better-sqlite3");
+import express from "express";
+import sqlite3 from "sqlite3";
 
+sqlite3.verbose();
 const router = express.Router();
-const db = new Database("./Products.db");
+
+// ✅ Open SQLite DB
+const db = new sqlite3.Database("./Products.db", (err) => {
+  if (err) console.error("Database Connection Error:", err.message);
+  else console.log("✅ Products DB Connected");
+});
 
 // Get all products
 router.get("/products", (req, res) => {
@@ -13,23 +19,25 @@ router.get("/products", (req, res) => {
     order = "ASC",
   } = req.query;
 
-  try {
-    let query;
-    let rows;
+  let query = `SELECT * FROM Products`;
+  const params = [];
 
-    if (category === "All" || category.trim() === "") {
-      query = `SELECT * FROM Products ORDER BY ${order_by} ${order}`;
-      rows = db.prepare(query).all();
-    } else {
-      query = `SELECT * FROM Products WHERE category LIKE ? ORDER BY ${order_by} ${order}`;
-      rows = db.prepare(query).all(`%${category}%`);
-    }
-
-    res.status(200).json(rows);
-  } catch (err) {
-    console.error("DB Error:", err.message);
-    res.status(500).json({ error: "Failed to retrieve products" });
+  if (category !== "All" && category.trim() !== "") {
+    query += ` WHERE category LIKE ?`;
+    params.push(`%${category}%`);
   }
+
+  query += ` ORDER BY ${order_by} ${order}`;
+
+  db.all(query, params, (err, rows) => {
+    if (err) {
+      console.error("DB Error:", err.message);
+      return res.status(500).json({ error: "Failed to retrieve products" });
+    }
+    res.status(200).json(rows);
+  });
 });
 
-module.exports = router;
+
+
+export default router;

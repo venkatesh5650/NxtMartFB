@@ -2,130 +2,159 @@ import styled from "styled-components";
 
 export const LoginContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f5f5f5;
+  align-items: center;
+  min-height: 100vh;
   padding: 20px;
-  box-sizing: border-box;
   background-image: url("https://res.cloudinary.com/dpiu7mohv/image/upload/v1756465869/Background_po1fpj.png");
+  background-size: cover;
+  background-position: center;
+
+  @media (max-width: 600px) {
+    background-image: url("https://res.cloudinary.com/dpiu7mohv/image/upload/v1762679187/Background_4_zyy2ep.png");
+  }
 `;
 
 export const LoginCard = styled.div`
-  padding: 1px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  width: 450px;
-  height: 450px;
-  text-align: center;
-`;
-export const Logo = styled.img`
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  padding: 25px 20px;
+  width: 400px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.18);
 
-  width: 119px;
-  height: 65px
-  angle: 0 deg;
-  opacity: 1;
+  @media (max-width: 600px) {
+    width: 92%;
+  }
+`;
+
+export const Logo = styled.img`
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
 `;
 
 export const LoginTitle = styled.h2`
-  margin-bottom: 20px;
-  color: darkgreen;
-  font-size: 23px;
-  font-weight: bold;
   text-align: center;
-  font-family: "Arial", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  margin: 0;
-  margin-top: 10px;
+  color: darkgreen;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
 `;
 
 export const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 300px;
-  height: 300px;
-  padding: 30px;
-  border-radius: 8px;
-  margin-left: auto;
-  margin-right: auto;
 `;
 
 export const AllInputContainer = styled.div`
-  text-align: left;
-  margin: 0;
+  width: 100%;
 `;
 
 export const InputContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
-  height: 50px;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+  height: 48px;
+  margin: 12px 0;
   border-radius: 7px;
+  padding: 0 10px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+
+  &:focus-within {
+    border-color: #16a34a;
+    box-shadow: 0 0 4px rgba(22, 163, 74, 0.4);
+  }
 `;
 
 export const LoginInput = styled.input`
-  height: 24px;
-  width: 70%;
-  padding: 10px;
-  color: black;
+  flex: 1;
   border: none;
   outline: none;
-  border-radius: 7px;
-  font-size: 18px;
+  padding-left: 8px;
+  font-size: 16px;
+
+  @media (min-width: 600px) {
+    margin-left: 20px;
+  }
 `;
 
 export const Label = styled.label`
-  font-size: 16px;
-  font-weight: 400;
-  align-self: flex-start;
+  font-size: 15px;
+  font-weight: 500;
 `;
 
-export const LoginButton = styled.button`
-  padding: 10px;
-  background-color: green;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  margin-top: 20px;
-  font-size: 16px;
-  cursor: pointer;
-  width: 100%;
-  &:hover {
-    background-color: black;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+export const PasswordRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -5px 0 15px;
+
+  label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #334155;
+  }
+
+  input {
+    width: 18px;
+    height: 18px;
+    accent-color: #16a34a;
+    cursor: pointer;
+  }
+
+  @media (max-width: 600px) {
+    label {
+      font-size: 13px;
+    }
   }
 `;
 
 export const ButtonRow = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  width: 100%;
-  gap: 12px; /* spacing between buttons */
+  gap: 12px;
+  margin-top: 18px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 10px;
+  }
+`;
+
+export const LoginButton = styled.button`
+  flex: 1;
+  padding: 12px;
+  background-color: green;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.25s;
+
+  &:hover {
+    background-color: black;
+    transform: scale(1.04);
+  }
 `;
 
 export const SignupButton = styled(LoginButton)`
-  background-color: black; /* slightly different or same */
+  background-color: black;
+
   &:hover {
     background-color: green;
   }
 `;
 
 export const ErrorMsg = styled.p`
-  color: red;
+  color: #dc2626;
+  text-align: center;
   font-size: 14px;
   margin-top: 10px;
-  text-align: center;
 `;

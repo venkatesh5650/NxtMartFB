@@ -42,7 +42,8 @@ const SignUp = () => {
       password,
       email,
     };
-    const url = "http://localhost:5000/auth/register";
+    const url = "https://nxtmartbackend-5.onrender.com/auth/register";
+
     const options = {
       method: "POST",
       headers: {
@@ -132,7 +133,9 @@ const SignUp = () => {
                 />
               </InputContainer>
               <SignUpButton type="submit">SignUp</SignUpButton>
-              <LoginButton type="button" onClick={RedirectToLogin}>Login</LoginButton>
+              <LoginButton type="button" onClick={RedirectToLogin}>
+                Login
+              </LoginButton>
             </AllInputContainer>
           </SignUpForm>
         </SignUpCard>

@@ -1,10 +1,17 @@
-const Database = require("better-sqlite3");
+import sqlite3 from "sqlite3";
+sqlite3.verbose();
 
-const db = new Database("./Products.db");
-console.log("✅ SQLite DB Connected");
+// ✅ Open / create database file
+const db = new sqlite3.Database("./Products.db", (err) => {
+  if (err) {
+    console.error("❌ SQLite Connection Error:", err.message);
+  } else {
+    console.log("✅ SQLite DB Connected");
+  }
+});
 
-// Users table
-db.prepare(
+// ✅ Create Users table
+db.run(
   `CREATE TABLE IF NOT EXISTS Users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -12,11 +19,14 @@ db.prepare(
     password TEXT NOT NULL,
     email TEXT UNIQUE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-  )`
-).run();
+  )`,
+  (err) => {
+    if (err) console.error("❌ Error creating Users table:", err.message);
+  }
+);
 
-// Products table
-db.prepare(
+// ✅ Create Products table
+db.run(
   `CREATE TABLE IF NOT EXISTS Products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
@@ -25,7 +35,10 @@ db.prepare(
     price REAL NOT NULL,
     image_url TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-  )`
-).run();
+  )`,
+  (err) => {
+    if (err) console.error("❌ Error creating Products table:", err.message);
+  }
+);
 
-module.exports = db;
+export default db;
