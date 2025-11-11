@@ -90,7 +90,9 @@ cd NxtMartFB/Ecommerce_App
 ### Backend Setup
 ```
 cd Backend
+
 npm install
+
 npm start
 
 Runs On
