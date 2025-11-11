@@ -95,17 +95,19 @@ npm install
 
 npm start
 
-Runs On
+Runs On:
 
 http://localhost:4000
 
 ### Frontend Setup
 
 cd ../Frontend/myapp
+
 npm install
+
 npm start
 
-Runs On
+Runs On:
 
 http://localhost:3000
 ```
