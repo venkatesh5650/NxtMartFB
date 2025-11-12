@@ -1,17 +1,13 @@
 import express from "express";
 import sqlite3 from "sqlite3";
+import db from "../Database/db.js";
+import authMiddleware from "../middleware/auth.js";
 
 sqlite3.verbose();
 const router = express.Router();
 
-// ✅ Open SQLite DB
-const db = new sqlite3.Database("./Products.db", (err) => {
-  if (err) console.error("Database Connection Error:", err.message);
-  else console.log("✅ Products DB Connected");
-});
-
 // Get all products
-router.get("/products", (req, res) => {
+router.get("/products", authMiddleware, (req, res) => {
   const {
     search_q = "",
     category = "All",
@@ -37,7 +33,5 @@ router.get("/products", (req, res) => {
     res.status(200).json(rows);
   });
 });
-
-
 
 export default router;

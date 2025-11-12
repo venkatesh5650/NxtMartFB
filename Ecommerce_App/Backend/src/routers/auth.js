@@ -3,17 +3,13 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 import sqlite3 from "sqlite3";
+import db from "../Database/db.js";
 
 dotenv.config();
 sqlite3.verbose();
 
 const router = express.Router();
 
-// ✅ Connect DB
-const db = new sqlite3.Database("./Products.db", (err) => {
-  if (err) console.error("❌ DB Connection Error:", err.message);
-  else console.log("✅ Auth DB Connected");
-});
 
 // Register
 router.post("/register", (req, res) => {
