@@ -18,7 +18,7 @@ router.get("/products", authMiddleware, (req, res) => {
   let query = `SELECT * FROM Products`;
   const params = [];
 
-  if (category !== "All" && category.trim() !== "") {
+  if (category.toLowerCase() !== "all" && category.trim() !== "") {
     query += ` WHERE category LIKE ?`;
     params.push(`%${category}%`);
   }
