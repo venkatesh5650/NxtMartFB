@@ -6,7 +6,6 @@ import authMiddleware from "../middleware/auth.js";
 sqlite3.verbose();
 const router = express.Router();
 
-// Get all products
 router.get("/products", authMiddleware, (req, res) => {
   const {
     search_q = "",
@@ -17,12 +16,26 @@ router.get("/products", authMiddleware, (req, res) => {
 
   let query = `SELECT * FROM Products`;
   const params = [];
+  const whereClauses = [];
 
-  if (category.toLowerCase() !== "all" && category.trim() !== "") {
-    query += ` WHERE category LIKE ?`;
+  // CATEGORY FILTER (only if no search is happening)
+  if (category.toLowerCase() !== "all" && search_q.trim() === "") {
+    whereClauses.push("category LIKE ?");
     params.push(`%${category}%`);
   }
 
+  // SEARCH FILTER — case insensitive, works fully
+  if (search_q.trim() !== "") {
+    whereClauses.push("LOWER(name) LIKE LOWER(?)");
+    params.push(`%${search_q}%`);
+  }
+
+  // Apply WHERE conditions
+  if (whereClauses.length > 0) {
+    query += " WHERE " + whereClauses.join(" AND ");
+  }
+
+  // Sorting
   query += ` ORDER BY ${order_by} ${order}`;
 
   db.all(query, params, (err, rows) => {
