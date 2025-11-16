@@ -125,7 +125,7 @@ http://localhost:3000
 ```
 ###ScreenShots
 
-![Home Page](./Ecommerce_App/Frontend/myapp/public/screenshots/login.png)
+![Home Page](./screenshots/image.png)
 ![Product List](./Ecommerce_App/Frontend/myapp/public/screenshots/Home.png)
 ![Cart Page](./Ecommerce_App/Frontend/myapp/public/screenshots/cart.png)
 ![Signup Form](./Ecommerce_App/Frontend/myapp/public/screenshots/checkout.png)
