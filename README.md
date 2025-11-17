@@ -174,7 +174,7 @@ Runs on:
 
 ### ✨ Why This Project Stands Out (Interview Points)
 
-✔️ Clean Full-Stack Architecture
+- ✔️ Clean Full-Stack Architecture
 ✔️ Proper controllers & route separation
 ✔️ Secure JWT auth implementation
 ✔️ Optimized product endpoints with safe sorting
