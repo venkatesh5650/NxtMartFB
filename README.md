@@ -124,8 +124,8 @@ http://localhost:3000
 
 ```
 ### ScreenShots
-
-![Home Page](./screenshots/image.png)
+## SignupPage
+![Signup Page](./screenshots/image.png)
 ![Login Page](./screenshots/login.png)
 ![Home Light Mode Page](./screenshots/homeLightMode.png)
 ![Home Dark Mode Page](./screenshots/homeDarkMode.png)
