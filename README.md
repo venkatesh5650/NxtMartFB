@@ -123,15 +123,22 @@ http://localhost:3000
 ```
 
 ```
-### ScreenShots
-## SignupPage
+## ScreenShots
+### SignupPage
 ![Signup Page](./screenshots/image.png)
+### Login Page
 ![Login Page](./screenshots/login.png)
+### Home Light Mode Page
 ![Home Light Mode Page](./screenshots/homeLightMode.png)
+### Home Dark Mode Page
 ![Home Dark Mode Page](./screenshots/homeDarkMode.png)
+### Product Details Page
 ![Product Details Page](./screenshots/productDetails.png)
+###  Similar Products Page
 ![Similar Products Page](./screenshots/similarProducts.png)
+### Cart Page
 ![cart Page](./screenshots/cart.png)
+### Checkout Page
 ![checkout Page](./screenshots/checkout.png)
 
 ```
