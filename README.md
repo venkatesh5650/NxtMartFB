@@ -126,8 +126,12 @@ http://localhost:3000
 ### ScreenShots
 
 ![Home Page](./screenshots/image.png)
-![Product List](./screenshots/home.png)
-![Cart Page](./Ecommerce_App/Frontend/myapp/public/screenshots/cart.png)
-![Signup Form](./Ecommerce_App/Frontend/myapp/public/screenshots/checkout.png)
+![Login Page](./screenshots/login.png)
+![Home Light Mode Page](./screenshots/homeLightMode.png)
+![Home Dark Mode Page](./screenshots/homeDarkMode.png)
+![Product Details Page](./screenshots/productDetails.png)
+![Similar Products Page](./screenshots/similarProducts.png)
+![cart Page](./screenshots/cart.png)
+![checkout Page](./screenshots/checkout.png)
 
 ```
