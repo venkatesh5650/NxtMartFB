@@ -175,20 +175,20 @@ Runs on:
 ### ✨ Why This Project Stands Out (Interview Points)
 
 - ✔️ Clean Full-Stack Architecture
-✔️ Proper controllers & route separation
-✔️ Secure JWT auth implementation
-✔️ Optimized product endpoints with safe sorting
-✔️ Dark/Light theme implementation
-✔️ Professional folder organization
-✔️ Clean reusable styled-components
-✔️ Protected routes using higher-order component
-✔️ Well-structured README (this one 😄)
+- ✔️ Proper controllers & route separation
+- ✔️ Secure JWT auth implementation
+- ✔️ Optimized product endpoints with safe sorting
+- ✔️ Dark/Light theme implementation
+- ✔️ Professional folder organization
+- ✔️ Clean reusable styled-components
+- ✔️ Protected routes using higher-order component
+- ✔️ Well-structured README 
 
 ### 🙋‍♂️ Author
 
-Venkatesh Karthan
-Full-Stack Developer | MERN | Python | SQL
-GitHub: https://github.com/venkatesh5650
+- Venkatesh Karthan
+- Full-Stack Developer | MERN | Python | SQL
+- GitHub: https://github.com/venkatesh5650
 ```
 ## ScreenShots
 ### SignupPage
