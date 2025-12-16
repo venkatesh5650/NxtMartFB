@@ -77,32 +77,40 @@ Each repo is managed and deployed independently but represented together in a cl
 NxMart-Fullstack/
 │
 ├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   │   ├── Home/
-│   │   │   ├── Login/
-│   │   │   ├── Signup/
-│   │   │   ├── Cart/
-│   │   │   ├── Checkout/
-│   │   │   └── ProductDetails/
-│   │   ├── components/
-│   │   ├── theme/
-│   │   ├── api/
-│   │   ├── layouts/
-│   │   └── App.jsx
+│   ├── public/
+│   │   └── index.html
 │   │
-│   └── public/
+│   └── src/
+│       ├── api/                # API service calls (Axios / Fetch)
+│       ├── components/         # Reusable UI components
+│       ├── layouts/            # Common layouts (Navbar, Footer, etc.)
+│       ├── pages/              # Application pages
+│       │   ├── Home/
+│       │   ├── Login/
+│       │   ├── Signup/
+│       │   ├── Cart/
+│       │   ├── Checkout/
+│       │   └── ProductDetails/
+│       ├── theme/              # Dark/Light theme configuration
+│       ├── validators/         # Client-side validations
+│       ├── App.jsx             # Root component
+│       └── index.jsx           # Application entry point
 │
-└── backend/
-    ├── src/
-    │   ├── config/
-    │   ├── controllers/
-    │   ├── middleware/
-    │   ├── routes/
-    │   ├── validators/
-    │   └── server.js
-    │
-    └── Database/
+├── backend/
+│   └── src/
+│       ├── config/             # Environment & app configurations
+│       ├── controllers/        # Request handlers (business logic)
+│       ├── data/               # Static / seed data
+│       ├── database/           # Database connection & setup
+│       ├── middleware/         # JWT auth & custom middlewares
+│       ├── migrations/         # Database migration scripts
+│       ├── repositories/       # Database access layer
+│       ├── routes/             # API route definitions
+│       ├── services/           # Core business services
+│       ├── validators/         # Request validation (Zod)
+│       └── server.js           # Server entry point
+│
+└── README.md
 
 ```
 
