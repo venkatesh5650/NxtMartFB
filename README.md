@@ -203,7 +203,7 @@ npm start
 
 
 
-```
+
 ## ScreenShots
 ### SignupPage
 ![Signup Page](./screenshots/image.png)
@@ -222,7 +222,6 @@ npm start
 ### Checkout Page
 ![checkout Page](./screenshots/checkout.png)
 
-```
 
 ## 🔮 Future Improvements
 
