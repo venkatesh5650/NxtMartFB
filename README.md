@@ -62,17 +62,17 @@ Responsiveness | Mobile-first UI using Styled Components |
 
 
 ## 🏗️ System Architecture
-
+```
 [ React Frontend ] ⇄ [ Express REST API ] ⇄ [ SQLite Database ]
                      │
                      ├─ JWT Authentication
                      ├─ Role-Based Authorization
                      ├─ Validation & Sanitization
                      └─ Order & User Controllers
-
+```
 
 ## 🛠️ Backend Structure
-
+```
 backend/src/
 ├── config/         # Environment & configuration
 ├── controllers/    # Business logic handlers
@@ -84,9 +84,9 @@ backend/src/
 ├── services/       # Core business services
 ├── validators/     # Request validation
 └── server.js       # App entry point
-
+```
 ## 🎨 Frontend Structure
-
+```
 frontend/src/
 ├── api/           # API communication layer
 ├── components/    # Reusable UI components
@@ -96,7 +96,7 @@ frontend/src/
 ├── theme/         # Light/Dark themes
 ├── validators/    # Client-side validation
 └── App.js         # App root
-
+```
 ## 🔌 API Design Highlights
 
 ### Public
@@ -132,7 +132,7 @@ PATCH  /admin/users/:id/toggle
 
 
 
-## 🧩 Core Capabilities
+
 
 
 ## 🏗️ Architecture
@@ -177,20 +177,6 @@ Full-Stack Developer | React | Node.js | SQL
 This project represents my hands-on learning in building secure, modular, and scalable web systems.
 
 
-
-🔌 Key API Endpoints
-Method	Endpoint	Purpose
-POST	/auth/register	Create new user
-POST	/auth/login	Authenticate user
-GET	/products	List products with filters
-GET	/products/	Get product details
-Filtering & Sorting
-GET /products?search_q=&category=&order_by=&order=
-Param	Description
-search_q	Search by product name
-category	Filter by category
-order_by	id, price, name, category
-order	ASC / DESC
 🛠️ Local Setup
 Backend
 cd backend
