@@ -205,22 +205,22 @@ npm start
 
 
 ## ScreenShots
-### SignupPage
-![Signup Page](./screenshots/image.png)
 ### Login Page
 ![Login Page](./screenshots/login.png)
-### Home Light Mode Page
-![Home Light Mode Page](./screenshots/homeLightMode.png)
 ### Home Dark Mode Page
 ![Home Dark Mode Page](./screenshots/homeDarkMode.png)
 ### Product Details Page
 ![Product Details Page](./screenshots/productDetails.png)
-###  Similar Products Page
-![Similar Products Page](./screenshots/similarProducts.png)
 ### Cart Page
 ![cart Page](./screenshots/cart.png)
 ### Checkout Page
 ![checkout Page](./screenshots/checkout.png)
+### User Order Details Page
+![User Order Details Page](./screenshots/nxtmart-user-order-details.png)
+### Admin Dashboard Page
+![Admin Dashboard Page](./screenshots/nxtmart-admin-dashboard.png)
+### Admin Users Page
+![Admin Users Page](./screenshots/nxtmart-admin-users.png)
 
 
 ## 🔮 Future Improvements
