@@ -61,6 +61,24 @@ Deployment | Frontend on Vercel, Backend on Render |
 Responsiveness | Mobile-first UI using Styled Components |
 
 
+## 🧠 Key Design Decisions
+
+- Chose SQLite for simplicity, portability, and interview friendliness.
+- Used layered architecture to avoid tight coupling between business logic and infrastructure.
+- Enforced authorization on backend rather than trusting frontend.
+- Implemented whitelist-based sorting to prevent injection risks.
+- Kept cart state local for responsiveness and reduced server load.
+
+## 🔒 Security Considerations
+
+- Passwords are hashed using bcrypt before storage.
+- JWT tokens are verified on every protected request.
+- Role-based middleware restricts admin-only operations.
+- Input and query parameters are validated using Zod.
+- Sensitive environment variables are excluded from version control.
+
+
+
 ## 🏗️ System Architecture
 ```
 [ React Frontend ] ⇄ [ Express REST API ] ⇄ [ SQLite Database ]
@@ -119,40 +137,6 @@ PUT    /admin/orders/:id/status
 GET    /admin/users
 PATCH  /admin/users/:id/toggle
 
-## ✨ Why This Project Stands Out
-
-✔️ Models realistic order workflows, not just CRUD  
-✔️ Demonstrates layered backend architecture  
-✔️ Uses secure JWT authentication and RBAC  
-✔️ Separates concerns cleanly across frontend and backend  
-✔️ Implements real admin and user flows  
-✔️ Shows understanding of business logic, not just UI  
-✔️ Written with interview explanation and clarity in mind  
-
-
-
-
-
-
-
-## 🏗️ Architecture
-
-The platform follows a layered architecture:
-
-Frontend:
-- React functional components with hooks
-- Styled Components for modular and theme-aware styling
-- Protected routes enforced through routing guards
-
-Backend:
-- Express REST API with controllers and services
-- Repository layer for database access
-- JWT-based authentication middleware
-- Input validation at API boundaries
-
-This separation improves testability, scalability, and maintainability.
-
-
 ## 🎨 Frontend Engineering Highlights
 
 - State managed through React hooks and context where appropriate
@@ -169,70 +153,46 @@ This separation improves testability, scalability, and maintainability.
 - JWT authentication with middleware enforcement
 - Query parameter whitelisting for safe sorting and filtering
 
-## 🙋‍♂️ Author
 
-**Venkatesh Karthan**  
-Full-Stack Developer | React | Node.js | SQL  
+## ✨ Why This Project Stands Out
 
-This project represents my hands-on learning in building secure, modular, and scalable web systems.
+✔️ Models realistic order workflows, not just CRUD  
+✔️ Demonstrates layered backend architecture  
+✔️ Uses secure JWT authentication and RBAC  
+✔️ Separates concerns cleanly across frontend and backend  
+✔️ Implements real admin and user flows  
+✔️ Shows understanding of business logic, not just UI  
+✔️ Written with interview explanation and clarity in mind  
 
 
-🛠️ Local Setup
-Backend
-cd backend
-npm install
-npm start
 
-Runs on: http://localhost:5000
+## 🛠️ Local Setup
 
-Frontend
-cd frontend
-npm install
-npm start
+Backend:
+cd backend  
+npm install  
+npm start  
+→ http://localhost:5000
 
-Runs on: http://localhost:3000
-
-🚀 Deployment
-Service	Provider	Status
-Frontend	Vercel	Live
-Backend	Render	Live
-Database	SQLite	Local file
-
-🙋‍♂️ Author
-
-Venkatesh Karthan
-Full-Stack Developer (React, Node.js, SQL)
-GitHub: https://github.com/venkatesh5650
+Frontend:
+cd frontend  
+npm install  
+npm start  
+→ http://localhost:3000
 
 ---
 
-## 🌐 Live System
+## 🚀 Deployment
 
-| Service | URL |
-|--------|------|
-| Frontend | https://frontend-nxt-mart-ctio.vercel.app |
-| Backend API | https://nxtmartbackend-5.onrender.com |
-
----
-
-
-
-## 🎯 Engineering Goals
-
-- Demonstrate clean full-stack architecture
-- Apply secure authentication and protected routing
-- Model realistic frontend state and UX flows
-- Enforce backend data validation and safety
-- Follow modular, maintainable code organization
-
----
-
-
----
+| Service | Provider | Status |
+|--------|----------|---------|
+| Frontend | Vercel | Live |
+| Backend | Render | Live |
+| Database | SQLite | Local |
 
 
 
----
+
 
 ### Live Demo
 
@@ -240,75 +200,6 @@ GitHub: https://github.com/venkatesh5650
 | --------------------------- | -------------------------------------------------------------------------------------- |
 | 🌐 **Frontend (Vercel)**    | [https://frontend-nxt-mart-ctio.vercel.app](https://frontend-nxt-mart-ctio.vercel.app) |
 | 🔌 **Backend API (Render)** | [https://nxtmartbackend-5.onrender.com](https://nxtmartbackend-5.onrender.com)          |
-
-
-
-
-
-```
-
-Each repo is managed and deployed independently but represented together in a clean full-stack structure for interviews & portfolio.
-
-### 🗃️ Frontend Tech Stack
-
-- React.js (Functional Components)
-- Styled Components (Theming + Modular styles)
-- React Router (Protected Routes)
-- LocalStorage + Cookies
-- Zod (Client-side validation)
-- Vercel (Deployment)
-
-### 🛠️ Backend Tech Stack
-
-- Node.js + Express.js
-- SQLite3 Database
-- JWT Authentication
-- Controllers + Routes architecture
-- Zod Validation
-- Bcrypt password hashing
-- Render (Deployment)
-
-### 📁 Final Project Folder Structure
-
-```
-
-## 🛠️ Local Development Setup
-### 1️⃣ Clone the Fullstack Repo
-```
-git clone <fullstack-repo-url>
-cd NxMart-Fullstack
-
-### 2️⃣ Backend Setup
-```
-cd backend
-npm install
-npm start
-
-```
-Runs on:
-```
-👉 http://localhost:5000
-```
-### 3️⃣ Frontend Setup
-```
-cd ../frontend
-npm install
-npm start
-
-```
-Runs on:
-```
-👉 http://localhost:3000
-```
-
-### 🚀 Deployment Details
-
-| Service     | Provider | Status     |
-| ----------- | -------- | ---------- |
-| Frontend    | Vercel   | ✅ Live     |
-| Backend API | Render   | ✅ Live     |
-| Database    | SQLite   | Local file |
-
 
 
 
@@ -332,3 +223,20 @@ Runs on:
 ![checkout Page](./screenshots/checkout.png)
 
 ```
+
+## 🔮 Future Improvements
+
+- Payment gateway integration (Stripe / Razorpay)
+- Order status notifications
+- Pagination for large catalogs
+- Refresh token rotation
+- Automated test coverage
+
+
+## 🙋‍♂️ Author
+
+**Venkatesh Karthan**  
+Full-Stack Developer | React | Node.js | SQL  
+
+This project represents my hands-on learning in building secure, modular, and scalable web systems.
+
