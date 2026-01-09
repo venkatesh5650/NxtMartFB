@@ -271,73 +271,6 @@ Each repo is managed and deployed independently but represented together in a cl
 ### 📁 Final Project Folder Structure
 
 ```
-NxMart-Fullstack/
-│
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   │
-│   └── src/
-│       ├── api/                # API service calls (Axios / Fetch)
-│       ├── components/         # Reusable UI components
-│       ├── layouts/            # Common layouts (Navbar, Footer, etc.)
-│       ├── pages/              # Application pages
-│       │   ├── Home/
-│       │   ├── Login/
-│       │   ├── Signup/
-│       │   ├── Cart/
-│       │   ├── Checkout/
-│       │   └── ProductDetails/
-│       ├── theme/              # Dark/Light theme configuration
-│       ├── validators/         # Client-side validations
-│       ├── App.jsx             # Root component
-│       └── index.jsx           # Application entry point
-│
-├── backend/
-│   └── src/
-│       ├── config/             # Environment & app configurations
-│       ├── controllers/        # Request handlers (business logic)
-│       ├── data/               # Static / seed data
-│       ├── database/           # Database connection & setup
-│       ├── middleware/         # JWT auth & custom middlewares
-│       ├── migrations/         # Database migration scripts
-│       ├── repositories/       # Database access layer
-│       ├── routes/             # API route definitions
-│       ├── services/           # Core business services
-│       ├── validators/         # Request validation (Zod)
-│       └── server.js           # Server entry point
-│
-└── README.md
-
-```
-
-### 🔌 Backend API Endpoints
-
-| Method | Endpoint         | Description         |
-| ------ | ---------------- | ------------------- |
-| `POST` | `/auth/register` | Create new user     |
-| `POST` | `/auth/login`    | Login & receive JWT |
-
-### Products
-
-| Method | Endpoint        | Description                    |
-| ------ | --------------- | ------------------------------ |
-| `GET`  | `/products`     | List all products with filters |
-| `GET`  | `/products/:id` | Get single product details     |
-
-### Filtering + Sorting Parameters
-
-```
-GET /products?search_q=&category=&order_by=&order=
-```
-
-| Param    | Description               |
-| -------- | ------------------------- |
-| search_q | search by product name    |
-| category | filter category           |
-| order_by | id, price, name, category |
-| order    | ASC / DESC                |
-
 
 ## 🛠️ Local Development Setup
 ### 1️⃣ Clone the Fullstack Repo
@@ -345,7 +278,6 @@ GET /products?search_q=&category=&order_by=&order=
 git clone <fullstack-repo-url>
 cd NxMart-Fullstack
 
-```
 ### 2️⃣ Backend Setup
 ```
 cd backend
